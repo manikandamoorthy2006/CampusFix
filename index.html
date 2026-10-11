@@ -1,0 +1,66 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>CampusFix | Campus Issue Reporting</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+  <header class="topbar">
+    <div class="brand"><span class="brand-icon">C</span><div><strong>CampusFix</strong><small>Smart Campus Issue Reporting</small></div></div>
+    <span class="tag">STUDENT PROTOTYPE</span>
+  </header>
+
+  <main class="layout">
+    <section class="intro">
+      <p class="eyebrow">A BETTER CAMPUS STARTS WITH A REPORT</p>
+      <h1>Spot an issue?<br><span>Help fix it.</span></h1>
+      <p class="intro-copy">Report campus maintenance problems and follow their status in one simple place.</p>
+      <div class="stats">
+        <div><strong id="totalCount">0</strong><span>Total reports</span></div>
+        <div><strong id="openCount">0</strong><span>Open reports</span></div>
+        <div><strong id="resolvedCount">0</strong><span>Resolved</span></div>
+      </div>
+    </section>
+
+    <section class="panel form-panel">
+      <div class="section-heading"><div><p class="eyebrow">NEW REPORT</p><h2>Tell us what's wrong</h2></div><span class="step">01</span></div>
+      <form id="issueForm">
+        <label for="title">Issue title</label>
+        <input id="title" name="title" maxlength="90" placeholder="e.g. Water leak near Lab 2" required>
+        <div class="two-col">
+          <div><label for="category">Category</label>
+            <select id="category" name="category" required>
+              <option value="">Select category</option>
+              <option>Classroom / Lab</option><option>Water / Plumbing</option>
+              <option>Electrical</option><option>Cleanliness</option><option>Safety</option><option>Other</option>
+            </select>
+          </div>
+          <div><label for="priority">Priority</label>
+            <select id="priority" name="priority"><option>Normal</option><option>High</option></select>
+          </div>
+        </div>
+        <label for="location">Location</label>
+        <input id="location" name="location" maxlength="100" placeholder="Building, floor, or room">
+        <label for="description">Description</label>
+        <textarea id="description" name="description" rows="3" maxlength="500" placeholder="Describe the issue briefly..." required></textarea>
+        <button type="submit" class="primary-btn">Submit report <span>↗</span></button>
+        <p class="form-note">Demo prototype: reports are saved only in this browser on this device.</p>
+      </form>
+    </section>
+
+    <section class="panel reports-panel">
+      <div class="section-heading"><div><p class="eyebrow">CAMPUS OVERVIEW</p><h2>Recent reports</h2></div><button id="clearBtn" class="text-btn" type="button">Clear demo data</button></div>
+      <div class="filters">
+        <input id="searchInput" placeholder="Search reports..." aria-label="Search reports">
+        <select id="statusFilter" aria-label="Filter by status"><option value="All">All statuses</option><option>Submitted</option><option>In Progress</option><option>Resolved</option></select>
+      </div>
+      <div id="reportsList" class="reports-list"></div>
+      <p class="privacy-note">Please do not include private or sensitive personal information in a report.</p>
+    </section>
+  </main>
+  <footer>CampusFix · Student concept prototype · Built with HTML, CSS and JavaScript</footer>
+  <script src="script.js"></script>
+</body>
+</html>
